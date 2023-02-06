@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panier</title>
+</head>
+<body>
+<div id="app">
+    <h1>Vue mart</h1>
+
+    <ul>
+        <li>Pommes: {{costOfApples}} euros</li>
+        <li>Bananes: {{costOfBananas}} euros</li>
+        <li>Noix de coco: {{costOfCoconuts}} euros</li>
+    </ul>
+    <p>Total : {{totalPrix}} euros</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            costOfApples: 5,
+            costOfBananas: 12,
+            costOfCoconuts: 8
+        },
+        computed: {
+            totalPrix(){
+                return this.costOfApples + this.costOfBananas + this.costOfCoconuts
+            }
+        }
+    })
+</script>
+</body>
+</html>
